@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2021_10_20_192846) do
 
   create_table "musicals", force: :cascade do |t|
     t.string "title"
-    t.string "synopsis"
+    t.text "synopsis"
     t.integer "release_year"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
