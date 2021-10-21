@@ -1,4 +1,7 @@
 <h1> <%= @musical.title %> </h1>
+<p> <%= @musical.release_year %> </p>
+<h3> Synopsis: </h3>
+<p> <%= @musical.synopsis %> </p>
 <h3>Creative Team: </h3>
 <ul>
     <% @creators.each do |creator|%>
