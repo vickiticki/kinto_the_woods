@@ -1,6 +1,6 @@
 <h1>Creators</h1>
 <ul>
     <% @creators.each do |creator|%>
-    <li> <%= creator.name %> </li>
+    <li> <%= link_to creator.name, creator_path(creator) %> </li>
     <% end %>
 </ul>

@@ -1,6 +1,7 @@
 <h1>Musicals</h1>
 <ul>
     <% @musicals.each do |musical|%>
-    <li> <%= musical.title %> </li>
+    <li> <%= link_to musical.title, musical_path(musical) %> </li>
+
     <% end %>
 </ul>
