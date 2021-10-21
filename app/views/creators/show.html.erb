@@ -1,2 +1,10 @@
 <h1><%= @creator.name %></h1>
-<p> <%= link_to 'Back', creators_path %> </p>
+
+<h2> Musicals: </h2>
+<ul>
+    <% @musicals.each do |musical|%>
+    <li> <%= link_to musical.title, musical_path(musical) %> </li>
+
+    <% end %>
+</ul>
+<p> <%= link_to 'Back to Creators', creators_path %> </p>

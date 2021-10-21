@@ -5,6 +5,7 @@ class CreatorsController < ApplicationController
     end
 
     def show
+        @musicals = @creator.musicals
     end
 
     private

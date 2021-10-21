@@ -1,3 +1,9 @@
 <h1> <%= @musical.title %> </h1>
+<h3>Creative Team: </h3>
+<ul>
+    <% @creators.each do |creator|%>
+    <li> <%= link_to creator.name, creator_path(creator) %> </li>
+    <% end %>
+</ul>
 
-<p> <%= link_to 'Back', musicals_path %> </p>
+<p> <%= link_to 'Back to Musicals', musicals_path %> </p>
