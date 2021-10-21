@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 
   resources :musicals, :creators
 
+  root 'home#index'
+
 end
