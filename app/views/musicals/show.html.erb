@@ -8,5 +8,13 @@
     <li> <%= link_to creator.name, creator_path(creator) %> </li>
     <% end %>
 </ul>
+<h3> Songs: </h3>
+
+    <% @songs.each do |song| %>
+     <p><%= song.track_no %>. <%= song.song_title %></p>
+    <% end %>
+
+ 
+
 
 <p> <%= link_to 'Back to Musicals', musicals_path %> </p>

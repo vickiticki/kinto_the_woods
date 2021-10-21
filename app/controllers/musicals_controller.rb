@@ -7,6 +7,7 @@ class MusicalsController < ApplicationController
     def show
         # @musical = Musical.find(params[:id])
         @creators = @musical.creators
+        @songs = @musical.songs
     end
 
     private
