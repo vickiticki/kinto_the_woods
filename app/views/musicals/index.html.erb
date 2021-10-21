@@ -1,1 +1,6 @@
-<h1>Hey</h1>
+<h1>Musicals</h1>
+<ul>
+    <% @musicals.each do |musical|%>
+    <li> <%= musical.title %> </li>
+    <% end %>
+</ul>
