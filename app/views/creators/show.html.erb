@@ -1,5 +1,13 @@
 <h1><%= @creator.name %></h1>
 
+<%
+=begin%>
+ <% if @creator.portrait.attached? %>
+  <%= image_tag @creator.portrait %>
+<% end %> 
+<%
+=end%>
+
 <h2> Biography: </h2>
 <p> <%= @creator.bio %> </p>
 

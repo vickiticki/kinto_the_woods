@@ -1,4 +1,11 @@
 <h1> <%= @musical.title %> </h1>
+<%
+=begin%>
+ <% if @musical.poster.attached? %>
+  <%= image_tag @musical.poster %>
+<% end %> 
+<%
+=end%>
 <p> <%= @musical.release_year %> </p>
 <h3> Synopsis: </h3>
 <p> <%= @musical.synopsis %> </p>

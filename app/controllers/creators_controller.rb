@@ -39,6 +39,7 @@ class CreatorsController < ApplicationController
     
     def creator_params
         params.require(:creator).permit(:name, :bio)
+        # add :portrait to params 
     end
 
     def find_creator
