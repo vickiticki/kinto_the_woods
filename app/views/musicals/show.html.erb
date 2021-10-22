@@ -18,6 +18,6 @@
 
 <br>
 <p> <%= link_to "Edit", edit_musical_path(@musical) %> </p>
-<br>
+<p> <%= link_to 'Delete', musical_path(@musical.id), method: :delete %> </p>
 
 <p> <%= link_to 'Back to Musicals', musicals_path %> </p>

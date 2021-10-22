@@ -1,2 +1,5 @@
 <p> "<%= @song.song_title %>" is from <%= @song.musical.title %></p>
+
 <p> <%= link_to 'Back to Songs', songs_path %> </p>
+
+<button><%= link_to 'Delete', song_path(@song.id), method: :delete %></button>
