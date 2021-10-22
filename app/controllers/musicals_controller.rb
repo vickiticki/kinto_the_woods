@@ -1,5 +1,5 @@
 class MusicalsController < ApplicationController
-    before_action :find_musical, only: [:show, :edit, :update]
+    before_action :find_musical, only: [:show, :edit, :update, :destroy]
     def index 
         @musicals = Musical.all
     end
@@ -32,10 +32,10 @@ class MusicalsController < ApplicationController
         redirect_to musical_path(@musical)
       end
     
-    #   def destroy
-    #     @movie.destroy
-    #     redirect_to movies_path
-    #   end
+      def destroy
+        @musical.destroy
+        redirect_to musicals_path
+      end
 
     private
 
