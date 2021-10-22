@@ -1,5 +1,9 @@
 <ul>
     <% @books.each do |book| %>
-        <li> <%= book.musical.title %> by <%= book.creator.name %> </li>
+        <% if book.creator != nil && book.musical != nil %>
+            <li> <%= link_to book.id, book_path(book) %>. <%= book.musical.title %> by <%= book.creator.name %> </li>
+        <% else %>
+            <li> <%= link_to book.id, book_path(book) %> </li>
+        <% end %>
     <% end %>
 </ul>
