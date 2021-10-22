@@ -40,8 +40,7 @@ class MusicalsController < ApplicationController
     private
 
     def musical_params
-        params.require(:musical).permit(:title, :synopsis, :release_year)
-        # add :poster to params 
+        params.require(:musical).permit(:title, :synopsis, :release_year, :poster)
     end
 
     def find_musical

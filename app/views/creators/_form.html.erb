@@ -1,5 +1,10 @@
 <%= form_with(model: @creator, local: true) do |form| %>
 
+  <div>
+    <%= form.label :portrait %>
+    <%= form.file_field :portrait %>
+  </div>
+
 <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
