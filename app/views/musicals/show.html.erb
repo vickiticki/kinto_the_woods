@@ -8,7 +8,7 @@
     <li> <%= link_to creator.name, creator_path(creator) %> </li>
     <% end %>
 </ul>
-<p>Add creator</p>
+<p> <%= link_to "Add Person to Team", '/books/new' %> </p>
 <h3> Songs: </h3>
 
     <% @songs.each do |song| %>
