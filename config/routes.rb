@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   # get '/creators' => 'creators#index'
 
-  resources :musicals, :creators
+  resources :musicals, :creators, :books
+
+  # get '/books/new' => 'books#new'
 
   root 'home#index'
 

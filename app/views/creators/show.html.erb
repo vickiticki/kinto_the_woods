@@ -9,6 +9,9 @@
     <li> <%= link_to musical.title, musical_path(musical) %> </li>
     <% end %>
 </ul>
+
+<p> <%= link_to "Edit", edit_creator_path(@creator) %> </p>
+
 <p>Add musical</p>
 
 <p> <%= link_to 'Back to Creators', creators_path %> </p>
