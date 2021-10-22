@@ -11,10 +11,13 @@
 <p> <%= @musical.synopsis %> </p>
 <h3>Creative Team: </h3>
 <ul>
-    <% @creators.each do |creator|%>
-    <li> <%= link_to creator.name, creator_path(creator) %> </li>
+    <% @musical.books.each do |book| %>
+    <% creator = book.creator %>
+        <li> <%= link_to creator.name, creator_path(creator) %> </li>
+        <button><%= link_to 'Remove', book_path(book), method: :delete %></button>
     <% end %>
 </ul>
+
 <p> <%= link_to "Add Person to Team", '/books/new' %> </p>
 <h3> Songs: </h3>
 
