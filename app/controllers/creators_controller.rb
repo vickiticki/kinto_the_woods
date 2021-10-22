@@ -10,30 +10,30 @@ class CreatorsController < ApplicationController
 
     def new
         @creator = Creator.new
-      end
+    end
     
-      def create 
-        @creator = Creator.new(musical_params)
+    def create 
+        @creator = Creator.new(creator_params)
         if @creator.save
           redirect_to @creator
         else
           render 'new'
         end
-      end
+    end
       
-      def edit
+    def edit
         @creator = Creator.find(params[:id])
-      end
+    end
     
-      def update
+    def update
         @creator.update(creator_params)
         redirect_to creator_path(@creator)
-      end
+    end
     
-      def destroy
+    def destroy
         @creator.destroy
         redirect_to creators_path
-      end
+    end
 
     private
     
