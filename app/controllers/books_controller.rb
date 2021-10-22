@@ -16,24 +16,24 @@ class BooksController < ApplicationController
     def create 
         @book = Book.new(book_params)
         if @book.save
-          redirect_to @book
+          redirect_to @book.musical
         else
           render 'new'
         end
     end
       
     # def edit
-    #     @creator = Creator.find(params[:id])
+    #     @book = Book.find(params[:id])
     # end
     
     # def update
-    #     @creator.update(creator_params)
-    #     redirect_to creator_path(@creator)
+    #     @book.update(book_params)
+    #     redirect_to book_path(@book)
     # end
     
     # def destroy
-    #     @creator.destroy
-    #     redirect_to creators_path
+    #     @book.destroy
+    #     redirect_to musicals_path
     # end
 
     private

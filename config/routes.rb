@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   # get '/creators' => 'creators#index'
 
-  resources :musicals, :creators, :books
+  resources :musicals, :creators, :books, :songs
 
   # get '/books/new' => 'books#new'
 

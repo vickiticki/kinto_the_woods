@@ -1,5 +1,5 @@
 <ul>
-    <%= @books.each do |book| %>
+    <% @books.each do |book| %>
         <li> <%= book.musical.title %> by <%= book.creator.name %> </li>
     <% end %>
 </ul>
