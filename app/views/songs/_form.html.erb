@@ -1,0 +1,20 @@
+<%= form_with(model: @song, local: true) do |form| %>
+
+<div class="field">
+    <%= form.label :song_title %>
+    <%= form.text_field :song_title %>
+</div>
+
+<div class="field">
+    <%= form.label :track_no %>
+    <%= form.number_field :track_no %>
+</div>
+
+<div class="field">
+    <%= form.label :musical %>
+    <%= form.select :musical_id, options_from_collection_for_select(Musical.all, 'id', 'title') %>
+</div> 
+
+<%= form.submit %>
+
+<% end %>

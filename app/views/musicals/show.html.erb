@@ -14,7 +14,7 @@
     <% @songs.each do |song| %>
      <p><%= song.track_no %>. <%= song.song_title %></p>
     <% end %>
-<p>Add song</p>
+<p><%= link_to "Add song", '/songs/new' %></p>
 
 <br>
 <p> <%= link_to "Edit", edit_musical_path(@musical) %> </p>

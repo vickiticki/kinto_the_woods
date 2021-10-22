@@ -8,27 +8,27 @@ class SongsController < ApplicationController
     #    @musical = @song.musical   
     end
 
-    # def new
-    #     @book = Book.new
-    # end
+    def new
+        @song = Song.new
+    end
     
-    # def create 
-    #     @book = Book.new(book_params)
-    #     if @book.save
-    #       redirect_to @book.musical
-    #     else
-    #       render 'new'
-    #     end
-    # end
+    def create 
+        @song = Song.new(song_params)
+        if @song.save
+          redirect_to @song
+        else
+          render 'new'
+        end
+    end
       
-    # # def edit
-    # #     @creator = Creator.find(params[:id])
-    # # end
+    def edit
+    # #     @song = Song.find(params[:id])
+    end
     
-    # # def update
-    # #     @creator.update(creator_params)
-    # #     redirect_to creator_path(@creator)
-    # # end
+    def update
+        @song.update(song_params)
+        redirect_to song_path(@song)
+    end
     
     # # def destroy
     # #     @creator.destroy
@@ -37,9 +37,9 @@ class SongsController < ApplicationController
 
     private
     
-    # def book_params
-    #     params.require(:song).permit(:song_title, :track_no, :musical_id)
-    # end
+    def song_params
+        params.require(:song).permit(:song_title, :track_no, :musical_id)
+    end
 
     def find_song
         @song = Song.find(params[:id])
