@@ -18,11 +18,7 @@
 
 <p> <%= link_to "Add Person to Team", '/books/new' %> </p>
 <h3> Songs: </h3>
-<%
-=begin%>
- <h4> <%= @album.name %> </h4> 
-<%
-=end%>
+
 <% if @album != nil %>
  <ol>
    <% @album.tracks.each do |track| %>
@@ -32,7 +28,17 @@
    <% end %>
  </ol>
 <% else %>
-<p> no songs </p>
+<%
+=begin%>
+ If it doesn't exist on spotify, you can enter songs manually  
+<%
+=end%>
+  <ul style="list-style-type:none;"> 
+    <% @songs.each do |song| %>
+      <li> <%= song.track_no %>. <%= song.song_title %> </li>
+    <% end %>
+  </ul>
+    <p><%= link_to "Add song", '/songs/new' %></p>
 <% end %>
 
 <br>
