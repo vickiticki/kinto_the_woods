@@ -19,13 +19,32 @@
 <p> <%= link_to "Add Person to Team", '/books/new' %> </p>
 <h3> Songs: </h3>
 
+<% if @album != nil %>
+ <ol>
+   <% @album.tracks.each do |track| %>
+     <li>
+       <%= track.name %>
+     </li>
+   <% end %>
+ </ol>
+<% else %>
+<%
+=begin%>
+ If it doesn't exist on spotify, you can enter songs manually  
+<%
+=end%>
+  <ul style="list-style-type:none;"> 
     <% @songs.each do |song| %>
-     <p><%= song.track_no %>. <%= song.song_title %></p>
+      <li> <%= song.track_no %>. <%= song.song_title %> </li>
     <% end %>
-<p><%= link_to "Add song", '/songs/new' %></p>
+  </ul>
+    <p><%= link_to "Add song", '/songs/new' %></p>
+<% end %>
 
 <br>
 <p> <%= link_to "Edit", edit_musical_path(@musical) %> </p>
 <p> <%= link_to 'Delete', musical_path(@musical.id), method: :delete %> </p>
 
 <p> <%= link_to 'Back to Musicals', musicals_path %> </p>
+
+
