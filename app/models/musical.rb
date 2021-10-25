@@ -3,4 +3,5 @@ class Musical < ApplicationRecord
     has_many :books
     has_many :creators, through: :books 
     has_one_attached :poster
+    # has_many :lists, through: :listed_musicals
 end
