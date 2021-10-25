@@ -1,3 +1,4 @@
+require 'rspotify'
 class MusicalsController < ApplicationController
     before_action :find_musical, only: [:show, :edit, :update, :destroy]
     def index 
@@ -6,8 +7,9 @@ class MusicalsController < ApplicationController
 
     def show
         # @musical = Musical.find(params[:id])
-        @creators = @musical.creators
-        @songs = @musical.songs
+      @creators = @musical.creators
+      @songs = @musical.songs
+      @album = RSpotify::Album.find(@musical.album_id)
     end
 
     def new
@@ -40,7 +42,7 @@ class MusicalsController < ApplicationController
     private
 
     def musical_params
-        params.require(:musical).permit(:title, :synopsis, :release_year, :poster)
+        params.require(:musical).permit(:title, :synopsis, :release_year, :album_id, :poster)
     end
 
     def find_musical
