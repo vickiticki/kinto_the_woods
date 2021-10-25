@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_25_175823) do
+ActiveRecord::Schema.define(version: 2021_10_25_191042) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -54,6 +54,23 @@ ActiveRecord::Schema.define(version: 2021_10_25_175823) do
     t.text "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "listed_musicals", force: :cascade do |t|
+    t.integer "musical_id"
+    t.integer "list_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["list_id"], name: "index_listed_musicals_on_list_id"
+    t.index ["musical_id"], name: "index_listed_musicals_on_musical_id"
+  end
+
+  create_table "lists", force: :cascade do |t|
+    t.string "list_title"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_lists_on_user_id"
   end
 
   create_table "musicals", force: :cascade do |t|

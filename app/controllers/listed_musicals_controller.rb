@@ -1,0 +1,2 @@
+class ListedMusicalsController < ApplicationController
+end

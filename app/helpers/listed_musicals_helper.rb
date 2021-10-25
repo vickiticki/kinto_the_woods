@@ -1,0 +1,2 @@
+module ListedMusicalsHelper
+end
