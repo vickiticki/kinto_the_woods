@@ -12,6 +12,7 @@ class MusicalsController < ApplicationController
       if @musical.album_id != nil && @musical.album_id.length >=1 
         @album = RSpotify::Album.find(@musical.album_id)
       end
+      @items = @musical.items
     end
 
     def new
@@ -44,7 +45,7 @@ class MusicalsController < ApplicationController
     private
 
     def musical_params
-        params.require(:musical).permit(:title, :synopsis, :release_year, :album_id, :poster)
+        params.require(:musical).permit(:title, :synopsis, :release_year, :album_id, :poster, :items)
     end
 
     def find_musical

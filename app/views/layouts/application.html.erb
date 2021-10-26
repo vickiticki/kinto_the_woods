@@ -18,6 +18,7 @@
  delete br later during styling  
 <%
 =end%>
+    <%= link_to 'Home', '/' %>
     <% if current_user %>
       Hi <%= link_to current_user.name, user_path(current_user) %>
       <%= link_to 'Log out', logout_path, method: :delete %>

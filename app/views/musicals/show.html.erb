@@ -42,6 +42,16 @@
 <% end %>
 
 <br>
+<h3>On Lists:</h3>
+<% if @items.length == 0 %>
+  <p>No lists</p>
+<% else %>
+  <ul>
+    <% @items.each do |item| %>
+      <li><%= link_to List.find(item.list_id).list_title, list_path(List.find(item.list_id)) %></li>
+    <% end %> 
+  </ul>
+<% end %>
 <p> <%= link_to "Edit", edit_musical_path(@musical) %> </p>
 <p> <%= link_to 'Delete', musical_path(@musical.id), method: :delete %> </p>
 
