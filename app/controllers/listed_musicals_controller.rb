@@ -9,18 +9,18 @@ class ListedMusicalsController < ApplicationController
     #    @creator = @book.creator
     # end
 
-    # def new
-    #     @book = Book.new
-    # end
+    def new
+        @listed_musical = ListedMusical.new
+    end
     
-    # def create 
-    #     @book = Book.new(book_params)
-    #     if @book.save
-    #       redirect_to @book.musical
-    #     else
-    #       render 'new'
-    #     end
-    # end
+    def create 
+        @listed_musical = ListedMusical.new(listed_musical_params)
+        if @listed_musical.save
+          redirect_to @listed_musical
+        else
+          render 'new'
+        end
+    end
       
     # def edit
     #     @book = Book.find(params[:id])

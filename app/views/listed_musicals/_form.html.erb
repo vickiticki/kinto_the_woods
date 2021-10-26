@@ -1,4 +1,4 @@
-<%= form_with(model: @listed_musicals) do |form| %>
+<%= form_with(model: @listed_musical, local: true) do |form| %>
 
 <div class="field">
     <%= form.label :musical %>
@@ -7,7 +7,7 @@
 
 <div class="field">
     <%= form.label :list %>
-    <%= form.select :list, options_from_collection_for_select(List.all, 'id', 'name') %>
+    <%= form.select :list, options_from_collection_for_select(List.all, 'id', 'list_title') %>
 </div> 
 
 <%= form.submit %>
