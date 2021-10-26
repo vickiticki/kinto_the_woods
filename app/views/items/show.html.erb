@@ -5,3 +5,5 @@
 <% if @list != nil %>
     <p> <%= @list.list_title %> </p>
 <% end %>
+
+<button><%= link_to 'Remove', item_path(@item), method: :delete %></button>

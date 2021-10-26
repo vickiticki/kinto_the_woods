@@ -48,7 +48,7 @@
 <% else %>
   <ul>
     <% @items.each do |item| %>
-      <li><%= link_to List.find(item.list_id).list_title, list_path(List.find(item.list_id)) %></li>
+        <li><%= link_to List.find(item.list_id).list_title, list_path(List.find(item.list_id)) %></li>
     <% end %> 
   </ul>
 <% end %>

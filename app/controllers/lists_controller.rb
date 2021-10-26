@@ -35,6 +35,8 @@ class ListsController < ApplicationController
       def destroy
         @user = User.find(@list.user_id)
         @list.destroy
+        Item.where(id: @list.items).delete_all 
+        # Review.where(id: @ride.reviews).delete_all
         redirect_to user_path(@user)
       end
 
