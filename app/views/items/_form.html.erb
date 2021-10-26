@@ -5,9 +5,10 @@
     <%= form.select :musical_id, options_from_collection_for_select(Musical.all, 'id', 'title') %>
 </div> 
 
+
 <div class="field">
     <%= form.label :list %>
-    <%= form.select :list_id, options_from_collection_for_select(List.all, 'id', 'list_title') %>
+    <%= form.select :list_id, options_from_collection_for_select(List.select {|list| list.user_id == current_user.id}, 'id', 'list_title') %>
 </div> 
 
 <%= form.submit %>
