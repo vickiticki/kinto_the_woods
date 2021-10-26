@@ -6,7 +6,8 @@ class ListsController < ApplicationController
 
     def show
       # @user = @list.user
-      @listed_musicals = @list.listed_musicals
+      @items = @list.items
+      # @listed_musicals = @list.listed_musicals
     end
 
     def new
@@ -39,7 +40,7 @@ class ListsController < ApplicationController
     private
 
     def list_params
-        params.require(:list).permit(:list_title, :user_id, :listed_musicals)
+        params.require(:list).permit(:list_title, :user_id, :items)
     end
 
     def find_list

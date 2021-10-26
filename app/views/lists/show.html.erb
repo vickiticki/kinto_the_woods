@@ -2,7 +2,7 @@
 <p> by <%= link_to User.find(@list.user_id).name, user_path(User.find(@list.user_id)) %></p> 
 
 <ul>
-    <% @listed_musicals.each do |item| %>
+    <% @items.each do |item| %>
         <li> <%= item.musical_id %> </li>
     <% end %>
 </ul>
