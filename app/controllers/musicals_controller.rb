@@ -9,7 +9,9 @@ class MusicalsController < ApplicationController
         # @musical = Musical.find(params[:id])
       @creators = @musical.creators
       @songs = @musical.songs
-      @album = RSpotify::Album.find(@musical.album_id)
+      if @musical.album_id != nil && @musical.album_id.length >=1 
+        @album = RSpotify::Album.find(@musical.album_id)
+      end
     end
 
     def new
