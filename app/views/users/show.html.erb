@@ -6,7 +6,7 @@
 <% if @lists.length != 0 %>
     <ul>
         <% @lists.each do |list| %>
-            <li> <%= list.list_title %> </li>
+            <li> <%= link_to list.list_title, list_path(list) %> </li>
         <% end %>
     </ul>
 <% else %>
