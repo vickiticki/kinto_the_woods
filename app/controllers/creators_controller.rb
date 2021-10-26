@@ -32,6 +32,7 @@ class CreatorsController < ApplicationController
     
     def destroy
         @creator.destroy
+        Book.where(id: @creator.books).delete_all
         redirect_to creators_path
     end
 

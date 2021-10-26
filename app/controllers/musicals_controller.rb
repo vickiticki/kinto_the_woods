@@ -39,6 +39,8 @@ class MusicalsController < ApplicationController
     
       def destroy
         @musical.destroy
+        Item.where(id: @musical.items).delete_all
+        Book.where(id: @musical.books).delete_all
         redirect_to musicals_path
       end
 
