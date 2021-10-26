@@ -1,2 +1,2 @@
 <h2><%= @list.list_title %></h2>
-<p> by <%= User.find(@list.user_id).name %></p> 
+<p> by <%= link_to User.find(@list.user_id).name, user_path(User.find(@list.user_id)) %></p> 
