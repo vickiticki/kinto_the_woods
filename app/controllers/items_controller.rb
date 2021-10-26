@@ -16,9 +16,10 @@ class ItemsController < ApplicationController
     def create 
         @item = Item.new(item_params)
         if @item.save
-          redirect_to @item
+            @list = @item.list
+            redirect_to list_path(@list)
         else
-          render 'new'
+            render 'new'
         end
     end
       
@@ -32,8 +33,9 @@ class ItemsController < ApplicationController
     end
     
     def destroy
+        @list = @item.list
         @item.destroy
-        redirect_to items_path
+        redirect_to list_path(@list)
     end
 
     private
