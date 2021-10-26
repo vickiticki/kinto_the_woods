@@ -23,19 +23,20 @@ class ListsController < ApplicationController
         end
     end
       
-    #   def edit
-    #     @musical = Musical.find(params[:id])
-    #   end
+      def edit
+        @list = List.find(params[:id])
+      end
     
-    #   def update
-    #     @musical.update(musical_params)
-    #     redirect_to musical_path(@musical)
-    #   end
+      def update
+        @list.update(list_params)
+        redirect_to list_path(@list)
+      end
     
-    #   def destroy
-    #     @musical.destroy
-    #     redirect_to musicals_path
-    #   end
+      def destroy
+        @user = User.find(@list.user_id)
+        @list.destroy
+        redirect_to user_path(@user)
+      end
 
     private
 
