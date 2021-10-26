@@ -2,7 +2,7 @@ require 'rspotify'
 class MusicalsController < ApplicationController
     before_action :find_musical, only: [:show, :edit, :update, :destroy]
     def index 
-        @musicals = Musical.all
+        @musicals = Musical.all.sort_by {|hash| hash[:title]}
     end
 
     def show

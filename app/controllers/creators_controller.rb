@@ -1,7 +1,7 @@
 class CreatorsController < ApplicationController
     before_action :find_creator, only: [:show, :edit, :update, :destroy]
     def index 
-        @creators = Creator.all
+        @creators = Creator.all.sort_by {|hash| hash[:name]}
     end
 
     def show
