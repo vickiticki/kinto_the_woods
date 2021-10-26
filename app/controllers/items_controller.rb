@@ -4,37 +4,37 @@ class ItemsController < ApplicationController
         @items = Item.all
     end
 
-    # def show
-    #    @musical = @book.musical
-    #    @creator = @book.creator
-    # end
+    def show
+       @musical = @item.musical
+       @list = @item.list
+    end
 
-    # def new
-    #     @book = Book.new
-    # end
+    def new
+        @item = Item.new
+    end
     
-    # def create 
-    #     @book = Book.new(book_params)
-    #     if @book.save
-    #       redirect_to @book.musical
-    #     else
-    #       render 'new'
-    #     end
-    # end
+    def create 
+        @item = Item.new(item_params)
+        if @item.save
+          redirect_to @item
+        else
+          render 'new'
+        end
+    end
       
-    # def edit
-    #     @book = Book.find(params[:id])
-    # end
+    def edit
+        @item = Item.find(params[:id])
+    end
     
-    # def update
-    #     @book.update(book_params)
-    #     redirect_to book_path(@book)
-    # end
+    def update
+        @item.update(item_params)
+        redirect_to item_path(@item)
+    end
     
-    # def destroy
-    #     @book.destroy
-    #     redirect_to books_path
-    # end
+    def destroy
+        @item.destroy
+        redirect_to items_path
+    end
 
     private
     
@@ -42,7 +42,7 @@ class ItemsController < ApplicationController
         params.require(:item).permit(:musical_id, :list_id)
     end
 
-    def find_book
+    def find_item
         @item = Item.find(params[:id])
     end
 end

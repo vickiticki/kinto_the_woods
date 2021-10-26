@@ -3,6 +3,6 @@
 
 <ul>
     <% @items.each do |item| %>
-        <li> <%= item.musical_id %> </li>
+        <li> <%= link_to Musical.find(item.musical_id).title, musical_path(Musical.find(item.musical_id)) %> </li>
     <% end %>
 </ul>
