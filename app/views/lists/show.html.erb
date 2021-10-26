@@ -1,0 +1,9 @@
+<h2><%= @list.list_title %></h2>
+<p> by <%= link_to User.find(@list.user_id).name, user_path(User.find(@list.user_id)) %></p> 
+
+<ul>
+    <% @items.each do |item| %>
+        <li> <%= link_to Musical.find(item.musical_id).title, musical_path(Musical.find(item.musical_id)) %> </li>
+        <button><%= link_to 'Remove', item_path(item), method: :delete %></button>
+    <% end %>
+</ul>

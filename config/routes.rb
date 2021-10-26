@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   
   # get '/creators' => 'creators#index'
   
-  resources :musicals, :creators, :books, :songs
+  resources :musicals, :creators, :books, :songs, :lists, :listed_musicals
+  resources :items
   resources :users
 
   get '/login', to: 'sessions#new'

@@ -1,0 +1,16 @@
+<%= form_with(model: @item, local: true) do |form| %>
+
+<div class="field">
+    <%= form.label :musical %>
+    <%= form.select :musical_id, options_from_collection_for_select(Musical.all, 'id', 'title') %>
+</div> 
+
+
+<div class="field">
+    <%= form.label :list %>
+    <%= form.select :list_id, options_from_collection_for_select(List.select {|list| list.user_id == current_user.id}, 'id', 'list_title') %>
+</div> 
+
+<%= form.submit %>
+
+<% end %>
