@@ -12,6 +12,8 @@
 <% else %>
     <p>User has no lists. </p>
 <% end %>
+<%= link_to 'New List', new_list_path %>
+<br>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

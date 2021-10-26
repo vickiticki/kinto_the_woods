@@ -4,6 +4,9 @@
 <ul>
     <% @items.each do |item| %>
         <li> <%= link_to Musical.find(item.musical_id).title, musical_path(Musical.find(item.musical_id)) %> </li>
-        <button><%= link_to 'Remove', item_path(item), method: :delete %></button>
+        <% if User.find(@list.user_id) == current_user %>
+            <button><%= link_to 'Remove', item_path(item), method: :delete %></button>
+        <% end %>
     <% end %>
 </ul>
+<%= link_to 'Add Musical', new_item_path %>
