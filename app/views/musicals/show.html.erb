@@ -17,6 +17,20 @@
 </ul>
 
 <p> <%= link_to "Add Person to Team", '/books/new' %> </p>
+
+<h4>Add Person</h4>
+<%= form_with(model: Book.new, local: true) do |form| %>
+
+  <%= form.hidden_field :musical_id, value: @musical.id %>
+
+    <div class="field">
+      <%= form.label :creator %>
+      <%= form.select :creator_id, options_from_collection_for_select(Creator.all.sort_by {|hash| hash[:name]}, 'id', 'name') %>
+    </div> 
+
+  <%= form.submit %>
+<% end %>
+
 <h3> Songs: </h3>
 
 <% if @album != nil %>
