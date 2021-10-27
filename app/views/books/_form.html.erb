@@ -2,13 +2,14 @@
 
 <div class="field">
     <%= form.label :musical %>
-    <%= form.select :musical_id, options_from_collection_for_select(Musical.all, 'id', 'title') %>
+    <%= form.select :musical_id, options_from_collection_for_select(Musical.all.sort_by {|hash| hash[:title]}, 'id', 'title') %>
 </div> 
 
 <div class="field">
     <%= form.label :creator %>
-    <%= form.select :creator_id, options_from_collection_for_select(Creator.all, 'id', 'name') %>
+    <%= form.select :creator_id, options_from_collection_for_select(Creator.all.sort_by {|hash| hash[:name]}, 'id', 'name') %>
 </div> 
+
 
 <%= form.submit %>
 

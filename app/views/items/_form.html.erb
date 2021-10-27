@@ -2,7 +2,7 @@
 
 <div class="field">
     <%= form.label :musical %>
-    <%= form.select :musical_id, options_from_collection_for_select(Musical.all, 'id', 'title') %>
+    <%= form.select :musical_id, options_from_collection_for_select(Musical.all.sort_by {|hash| hash[:title]}, 'id', 'title') %>
 </div> 
 
 
