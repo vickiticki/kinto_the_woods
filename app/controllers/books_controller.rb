@@ -32,8 +32,9 @@ class BooksController < ApplicationController
     end
     
     def destroy
+        @musical = @book.musical
         @book.destroy
-        redirect_to books_path
+        redirect_to musical_path(@musical)
     end
 
     private
