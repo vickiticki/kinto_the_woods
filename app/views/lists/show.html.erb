@@ -9,6 +9,22 @@
         <% end %>
     <% end %>
 </ul>
-<%= link_to 'Add Musical', new_item_path %>
+<%
+=begin%>
+ <%= link_to 'Add Musical', new_item_path %> 
+<%
+=end%>
+
+<%= form_with(model: Item.new, local: true) do |form| %>
+
+<%= form.hidden_field :list_id, value: @list.id %>
+<div class="field">
+    <%= form.label :musical %>
+    <%= form.select :musical_id, options_from_collection_for_select(Musical.all.sort_by {|hash| hash[:title]}, 'id', 'title') %>
+</div> 
+
+<%= submit_tag("Add Musical") %>
+<% end %>
+
 <br>
 <p><%= link_to 'Delete List', list_path(@list), method: :delete %></p>

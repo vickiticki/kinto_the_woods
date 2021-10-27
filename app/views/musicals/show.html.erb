@@ -70,6 +70,20 @@
     <% end %> 
   </ul>
 <% end %>
+
+<h4>Add to list</h4>
+<%= form_with(model: Item.new, local: true) do |form| %>
+
+  <%= form.hidden_field :musical_id, value: @musical.id %>
+  
+  <div class="field">
+    <%= form.label :list %>
+    <%= form.select :list_id, options_from_collection_for_select(List.select {|list| list.user_id == current_user.id}, 'id', 'list_title') %>
+  </div> 
+
+  <%= submit_tag("Add to list") %>
+<% end %>
+
 <p> <%= link_to "Edit", edit_musical_path(@musical) %> </p>
 <p> <%= link_to 'Delete', musical_path(@musical.id), method: :delete %> </p>
 
