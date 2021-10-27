@@ -16,7 +16,11 @@
     <% end %>
 </ul>
 
-<p> <%= link_to "Add Person to Team", '/books/new' %> </p>
+<%
+=begin%>
+ <p> <%= link_to "Add Person to Team", '/books/new' %> </p> 
+<%
+=end%>
 
 <h4>Add Person</h4>
 <%= form_with(model: Book.new, local: true) do |form| %>
@@ -28,7 +32,7 @@
       <%= form.select :creator_id, options_from_collection_for_select(Creator.all.sort_by {|hash| hash[:name]}, 'id', 'name') %>
     </div> 
 
-  <%= form.submit %>
+  <%= submit_tag("Add Person") %>
 <% end %>
 
 <h3> Songs: </h3>
