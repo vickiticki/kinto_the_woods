@@ -12,7 +12,7 @@
     <% @musical.books.each do |book| %>
     <% creator = book.creator %>
         <li> <%= link_to creator.name, creator_path(creator) %> </li>
-        <button><%= link_to 'Remove', book_path(book), method: :delete %></button>
+        <button class="p-0.5 border-red-700 border-2 rounded"><%= link_to 'Remove', book_path(book), method: :delete %></button>
     <% end %>
 </ul>
 
@@ -55,6 +55,7 @@
   <ul style="list-style-type:none;"> 
     <% @songs.each do |song| %>
       <li> <%= song.track_no %>. <%= song.song_title %> </li>
+      <button remove class="p-0.5 border-red-700 border-2 rounded">Remove</button>
     <% end %>
   </ul>
     <p><%= link_to "Add song", '/songs/new' %></p>

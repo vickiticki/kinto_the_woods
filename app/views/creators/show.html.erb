@@ -13,6 +13,12 @@
 <ul>
     <% @musicals.each do |musical|%>
     <li> <%= link_to musical.title, musical_path(musical) %> </li>
+    <button class="p-0.5 border-red-700 border-2 rounded">Remove <button>
+    <%
+=begin%>
+ <%= link_to 'Remove', book_path(book), method: :delete %> 
+<%
+=end%>
     <% end %>
 </ul>
 

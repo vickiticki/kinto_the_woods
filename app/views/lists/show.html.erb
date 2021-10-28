@@ -5,7 +5,7 @@
     <% @items.each do |item| %>
         <li> <%= link_to Musical.find(item.musical_id).title, musical_path(Musical.find(item.musical_id)) %> </li>
         <% if User.find(@list.user_id) == current_user %>
-            <button><%= link_to 'Remove', item_path(item), method: :delete %></button>
+            <button class="p-0.5 border-red-700 border-2 rounded"><%= link_to 'Remove', item_path(item), method: :delete %></button>
         <% end %>
     <% end %>
 </ul>
