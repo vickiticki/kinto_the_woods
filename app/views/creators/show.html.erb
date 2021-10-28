@@ -22,19 +22,21 @@
 <%
 =end%>
 
+<div class="p-1 border-green-300 border-2 mt-4 max-w-min">
 <h4>Add Musical</h4>
 <%= form_with(model: Book.new, local: true) do |form| %>
 
-<%= form.hidden_field :creator_id, value: @creator.id %>
+    <%= form.hidden_field :creator_id, value: @creator.id %>
 
-<div class="field">
-    <%= form.label :musical %>
-    <%= form.select :musical_id, options_from_collection_for_select(Musical.all.sort_by {|hash| hash[:title]}, 'id', 'title') %>
-</div> 
+    <div class="field">
+        <%= form.label :musical %>
+        <%= form.select :musical_id, options_from_collection_for_select(Musical.all.sort_by {|hash| hash[:title]}, 'id', 'title') %>
+    </div> 
 
-<%= submit_tag("Add Musical") %>
+    <%= submit_tag("Add Musical") %>
 
 <% end %>
+</div>
 
 <p> <%= link_to "Edit Person", edit_creator_path(@creator) %> </p>
 
