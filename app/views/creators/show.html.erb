@@ -35,7 +35,7 @@
         <%= form.select :musical_id, options_from_collection_for_select(Musical.all.sort_by {|hash| hash[:title]}, 'id', 'title') %>
     </div> 
 
-    <%= submit_tag("Add Musical") %>
+    <%= submit_tag("Add Musical", :class => "bg-black") %>
 
 <% end %>
 </div>
@@ -45,3 +45,4 @@
 <p> <%= link_to 'Delete', creator_path(@creator.id), method: :delete %> </p>
 
 <p> <%= link_to 'Back to Creators', creators_path %> </p>
+<br>
