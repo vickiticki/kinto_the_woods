@@ -11,7 +11,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="bg-black text-white">
+  <body class="bg-black bg-cover bg-fixed text-white" style="background-image:url(<%= image_url('backgrounds/curtains2.jpeg') %>)">
   <header class="my-4 border-b-2">
   <nav class="flex justify-center pb-2">
     <%= link_to 'Home', '/' %>
@@ -25,6 +25,7 @@
     </nav>
   </header>
     <main>
+
     <%= yield %> 
     </main>
   </body>
