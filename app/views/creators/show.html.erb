@@ -9,16 +9,12 @@
 <h2> Biography: </h2>
 <p> <%= @creator.bio %> </p>
 
-<h2> Musicals: </h2>
-<ul>
-    <% @musicals.each do |musical|%>
-    <li> <%= link_to musical.title, musical_path(musical) %> </li>
-    <button class="p-0.5 border-red-700 border-2 rounded">Remove <button>
-    <%
-=begin%>
- <%= link_to 'Remove', book_path(book), method: :delete %> 
-<%
-=end%>
+<h2 class="mt-8"> Musicals: </h2>
+
+<ul class="mt-2 list-disc list-inside">
+    <% @books.each do |book| %>
+        <li> <%= link_to book.musical.title, musical_path(book.musical) %> </li>
+        <button class="p-0.5 border-red-700 border-2 rounded"> <%= link_to 'Remove Musical', book_path(book), method: :delete %> </button>
     <% end %>
 </ul>
 
