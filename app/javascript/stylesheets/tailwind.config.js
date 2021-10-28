@@ -10,9 +10,7 @@ module.exports = {
     extend: {},
   },
   variants: {
-    extend: {
-      a: underline
-    },
+    extend: {},
   },
   plugins: [],
 }
