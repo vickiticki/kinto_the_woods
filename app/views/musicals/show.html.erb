@@ -8,7 +8,7 @@
 <h3> Synopsis: </h3>
 <p> <%= @musical.synopsis %> </p>
 <h3 class="mt-8">Creative Team: </h3>
-<ul class="mt-4">
+<ul class="mt-4 list-disc list-inside">
     <% @musical.books.each do |book| %>
     <% creator = book.creator %>
         <li> <%= link_to creator.name, creator_path(creator) %> </li>
@@ -39,7 +39,7 @@
 <h3 class="mt-8"> Songs: </h3>
 
 <% if @album != nil %>
- <ol class="list-decimal ml-8">
+ <ol class="list-decimal list-inside ml-4">
    <% @album.tracks.each do |track| %>
      <li>
        <%= track.name %>
