@@ -4,15 +4,15 @@
   <%= image_tag @musical.poster %>
 <% end %> 
 
-<p> <%= @musical.release_year %> </p>
+<p> Year: <%= @musical.release_year %> </p>
 <h3> Synopsis: </h3>
 <p> <%= @musical.synopsis %> </p>
-<h3>Creative Team: </h3>
-<ul>
+<h3 class="mt-8">Creative Team: </h3>
+<ul class="mt-4 list-disc list-inside">
     <% @musical.books.each do |book| %>
     <% creator = book.creator %>
         <li> <%= link_to creator.name, creator_path(creator) %> </li>
-        <button><%= link_to 'Remove', book_path(book), method: :delete %></button>
+        <button class="p-0.5 border-red-700 border-2 rounded"><%= link_to 'Remove', book_path(book), method: :delete %></button>
     <% end %>
 </ul>
 
@@ -21,7 +21,7 @@
  <p> <%= link_to "Add Person to Team", '/books/new' %> </p> 
 <%
 =end%>
-
+<div class="p-1 border-green-300 border-2 mt-4 max-w-min">
 <h4>Add Person</h4>
 <%= form_with(model: Book.new, local: true) do |form| %>
 
@@ -34,11 +34,12 @@
 
   <%= submit_tag("Add Person") %>
 <% end %>
+</div>
 
-<h3> Songs: </h3>
+<h3 class="mt-8"> Songs: </h3>
 
 <% if @album != nil %>
- <ol>
+ <ol class="list-decimal list-inside ml-4">
    <% @album.tracks.each do |track| %>
      <li>
        <%= track.name %>
@@ -54,6 +55,7 @@
   <ul style="list-style-type:none;"> 
     <% @songs.each do |song| %>
       <li> <%= song.track_no %>. <%= song.song_title %> </li>
+      <button remove class="p-0.5 border-red-700 border-2 rounded">Remove</button>
     <% end %>
   </ul>
     <p><%= link_to "Add song", '/songs/new' %></p>
@@ -70,7 +72,7 @@
     <% end %> 
   </ul>
 <% end %>
-
+<div class="p-1 border-green-300 border-2 mt-4 max-w-min">
 <h4>Add to list</h4>
 <%= form_with(model: Item.new, local: true) do |form| %>
 
@@ -83,6 +85,7 @@
 
   <%= submit_tag("Add to list") %>
 <% end %>
+</div>
 
 <p> <%= link_to "Edit", edit_musical_path(@musical) %> </p>
 <p> <%= link_to 'Delete', musical_path(@musical.id), method: :delete %> </p>

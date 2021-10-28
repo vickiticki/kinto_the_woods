@@ -6,6 +6,7 @@ class CreatorsController < ApplicationController
 
     def show
         @musicals = @creator.musicals
+        @books = @creator.books
     end
 
     def new

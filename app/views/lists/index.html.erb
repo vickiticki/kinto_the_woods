@@ -1,0 +1,9 @@
+<h1 class="font-bold text-xl">Lists</h1>
+
+<ul>
+    <% @lists.each do |list| %>
+        <% if list.user_id %>
+            <li> <%= link_to list.list_title, list_path(list) %> </li>
+        <% end %>
+    <% end %>
+</ul>

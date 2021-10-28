@@ -5,7 +5,7 @@
     <% @items.each do |item| %>
         <li> <%= link_to Musical.find(item.musical_id).title, musical_path(Musical.find(item.musical_id)) %> </li>
         <% if User.find(@list.user_id) == current_user %>
-            <button><%= link_to 'Remove', item_path(item), method: :delete %></button>
+            <button class="p-0.5 border-red-700 border-2 rounded"><%= link_to 'Remove', item_path(item), method: :delete %></button>
         <% end %>
     <% end %>
 </ul>
@@ -15,6 +15,8 @@
 <%
 =end%>
 
+<div class="p-1 border-green-300 border-2 mt-4 max-w-min">
+<h4>Add Musical</h4>
 <%= form_with(model: Item.new, local: true) do |form| %>
 
 <%= form.hidden_field :list_id, value: @list.id %>
@@ -25,6 +27,7 @@
 
 <%= submit_tag("Add Musical") %>
 <% end %>
+</div>
 
 <br>
 <p><%= link_to 'Delete List', list_path(@list), method: :delete %></p>
