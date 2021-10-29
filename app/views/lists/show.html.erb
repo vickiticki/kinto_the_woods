@@ -31,5 +31,5 @@
 
 <br>
 <p class="mt-8 text-green-200"> <%= link_to "Edit List", edit_list_path(@list) %> </p>
-<p class="my-4 bg-white text-red-700 font-bold p-2 max-w-min"><%= link_to 'Delete List', list_path(@list), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+<p class="my-4 bg-white text-red-700 font-bold p-2 max-w-min"><%= link_to 'Delete', list_path(@list), method: :delete, data: { confirm: 'Are you sure?' } %></p>
 <br>
