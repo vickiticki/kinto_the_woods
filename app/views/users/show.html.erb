@@ -4,7 +4,7 @@
 
 <h2>Lists:</h2>
 <% if @lists.length != 0 %>
-    <ul>
+    <ul class="list-disc list-inside">
         <% @lists.each do |list| %>
             <li> <%= link_to list.list_title, list_path(list) %> </li>
         <% end %>
