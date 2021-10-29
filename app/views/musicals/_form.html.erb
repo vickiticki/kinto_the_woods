@@ -1,9 +1,11 @@
 
 <%= form_with(model: @musical, local: true) do |form| %>
 
-<div class="field py-4">
+<div class="field py-4 flex">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <div class="text-black px-2">
+        <%= form.text_field :title %>
+    </div>
 </div>
 
 <div class="pb-4">
@@ -11,19 +13,25 @@
     <%= form.file_field :poster %>
 </div>
 
-<div class="field pb-4">
+<div class="field pb-4 flex">
     <%= form.label :release_year %>
-    <%= form.number_field :release_year %>
+    <div class="text-black px-2">
+        <%= form.number_field :release_year %>
+    </div>
 </div>
 
-<div class="field pb-4">
+<div class="field pb-4 flex">
     <%= form.label :synopsis %>
-    <%= form.text_field :synopsis %>
+    <div class="text-black px-2">
+        <%= form.text_field :synopsis %>
+    </div>
 </div>
 
-<div class="field pb-4">
+<div class="field pb-4 flex">
     <%= form.label "spotify id" %>
-    <%= form.text_field :album_id %>
+    <div class="text-black px-2">
+        <%= form.text_field :album_id %>
+    </div>
 </div>
 
 <%= submit_tag("Create/Update Musical", :class => "bg-blue-800") %>
