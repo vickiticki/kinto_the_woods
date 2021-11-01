@@ -1,16 +1,26 @@
 <%= form_with(model: @item, local: true) do |form| %>
 
-<div class="field">
+<div class="field flex py-4">
     <%= form.label :musical %>
+    <div class="text-black px-2">
     <%= form.select :musical_id, options_from_collection_for_select(Musical.all.sort_by {|hash| hash[:title]}, 'id', 'title') %>
+    </div>
 </div> 
 
 
-<div class="field">
+<div class="field pb-4 flex">
     <%= form.label :list %>
+    <div class="text-black px-2">
     <%= form.select :list_id, options_from_collection_for_select(List.select {|list| list.user_id == current_user.id}, 'id', 'list_title') %>
+    </div>
 </div> 
 
-<%= form.submit %>
+<%= submit_tag("Create/Update Item", :class => "bg-blue-800") %>
+<%
+=begin%>
+ <%= form.submit %> 
+<%
+=end%>
+
 
 <% end %>
