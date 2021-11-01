@@ -3,12 +3,25 @@
     <%= flash[:danger] %>
   </div>
   <div class="actions">
-    <%= form.label :email %> 
-    <%= form.email_field :email %> 
+    <div class="field flex py-2">
+      <%= form.label :email %> 
+      <div class="text-black px-2">
+        <%= form.email_field :email %> 
+      </div>
+    </div>
 
-    <%= form.label :password %>
-    <%= form.password_field :password %>
+    <div class="fiel flex pb-2">
+      <%= form.label :password %>
+      <div class="text-black px-2">
+        <%= form.password_field :password %>
+      </div>
+    </div>
 
-    <%= form.submit "Log in"%>
+    <%= submit_tag("Log In", :class => "bg-green-600 p-1 font-semibold") %>
+    <%
+=begin%>
+ <%= form.submit "Log in"%> 
+<%
+=end%>
   </div>
 <% end %>

@@ -11,27 +11,41 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <div class="field">
+  <div class="action">
+    <div class="field py-2 flex">
       <%= form.label :name %>
+        <div class="text-black px-2">
       <%= form.text_field :name %>
+      </div>
     </div>
 
-    <div class="field">
+    <div class="field pb-2 flex">
       <%= form.label :email %>
-      <%= form.email_field :email %>
+      <div class="text-black px-2">
+        <%= form.email_field :email %>
+      </div>
     </div>
 
-    <div class="field">
+    <div class="field pb-2 flex">
       <%= form.label :password %>
+      <div class="text-black px-2">
       <%= form.password_field :password %>
+      </div>
     </div>
 
-    <div class="field">
+    <div class="field pb-2 flex">
       <%= form.label :password_confirmation, "Confirmation" %>
+      <div class="text-black px-2">
       <%= form.password_field :password_confirmation %>
+      </div>
     </div>
 
-    <%= form.submit %>
+    <%= submit_tag("Sign Up", :class => "bg-green-600 p-1 font-semibold") %>
+
+    <%
+=begin%>
+ <%= form.submit %> 
+<%
+=end%>
   </div>
 <% end %>
