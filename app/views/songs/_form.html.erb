@@ -1,20 +1,32 @@
 <%= form_with(model: @song, local: true) do |form| %>
 
-<div class="field">
+<div class="field flex py-4">
     <%= form.label :song_title %>
-    <%= form.text_field :song_title %>
+    <div class="text-black px-2">
+        <%= form.text_field :song_title %>
+    </div>
 </div>
 
-<div class="field">
+<div class="field flex pb-4">
     <%= form.label :track_no %>
-    <%= form.number_field :track_no %>
+    <div class="text-black px-2">
+        <%= form.number_field :track_no %>
+    </div>
 </div>
 
-<div class="field">
+<div class="field flex pb-4">
     <%= form.label :musical %>
-    <%= form.select :musical_id, options_from_collection_for_select(Musical.all, 'id', 'title') %>
+    <div class="text-black px-2">
+        <%= form.select :musical_id, options_from_collection_for_select(Musical.all, 'id', 'title') %>
+    </div>
 </div> 
 
-<%= form.submit %>
+<%= submit_tag("Create/Update Song", :class => "bg-blue-800") %>
+
+<%
+=begin%>
+ <%= form.submit %> 
+<%
+=end%>
 
 <% end %>
