@@ -1,20 +1,32 @@
 <%= form_with(model: @creator, local: true) do |form| %>
 
-  <div>
+  <div class="flex py-4">
     <%= form.label :portrait %>
-    <%= form.file_field :portrait %>
+    <div class="px-2">
+      <%= form.file_field :portrait %>
+    </div>
   </div>
 
-<div class="field">
+<div class="field pb-4 flex">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <div class="text-black px-2">
+      <%= form.text_field :name %>
+    </div>
 </div>
 
-<div class="field">
+<div class="field pb-4 flex">
     <%= form.label :bio %>
-    <%= form.text_field :bio %>
+    <div class="text-black px-2">
+      <%= form.text_field :bio %>
+    </div>
 </div>
 
-<%= form.submit %>
+<%= submit_tag("Create/Update Person", :class => "bg-blue-800") %>
+
+<%
+=begin%>
+ <%= form.submit %> 
+<%
+=end%>
 
 <% end %>
