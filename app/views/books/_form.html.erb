@@ -1,16 +1,24 @@
 <%= form_with(model: @book) do |form| %>
 
-<div class="field">
+<div class="field py-4 flex">
     <%= form.label :musical %>
-    <%= form.select :musical_id, options_from_collection_for_select(Musical.all.sort_by {|hash| hash[:title]}, 'id', 'title') %>
+    <div class="text-black px-2">
+        <%= form.select :musical_id, options_from_collection_for_select(Musical.all.sort_by {|hash| hash[:title]}, 'id', 'title') %>
+    </div>
 </div> 
 
-<div class="field">
+<div class="field pb-4 flex">
     <%= form.label :creator %>
-    <%= form.select :creator_id, options_from_collection_for_select(Creator.all.sort_by {|hash| hash[:name]}, 'id', 'name') %>
+    <div class="text-black px-2">
+        <%= form.select :creator_id, options_from_collection_for_select(Creator.all.sort_by {|hash| hash[:name]}, 'id', 'name') %>
+    </div>
 </div> 
 
-
-<%= form.submit %>
+<%= submit_tag("Create/Update Book", :class => "bg-blue-800") %>
+<%
+=begin%>
+ <%= form.submit %> 
+<%
+=end%>
 
 <% end %>
