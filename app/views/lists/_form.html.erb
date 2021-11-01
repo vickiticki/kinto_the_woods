@@ -1,15 +1,22 @@
 <%= form_with(model: @list, local: true) do |form| %>
 
 
-<div class="field">
+<div class="field py-4 flex">
     <%= form.label :list_title %>
-    <%= form.text_field :list_title %>
+    <div class="text-black px-2">
+        <%= form.text_field :list_title %>
+    </div>
 </div>
 
 <%= form.hidden_field :user_id, value: current_user.id %>
 
 
+<%= submit_tag("Create/Update List", :class => "bg-blue-800") %>
 
-<%= form.submit %>
+<%
+=begin%>
+ <%= form.submit %> 
+<%
+=end%>
 
 <% end %>
