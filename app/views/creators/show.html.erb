@@ -1,14 +1,14 @@
-<div class="grid grid-flow-col justify-around">
-    <div class="max-w-50 mr-10">
-    <h1><%= @creator.name %></h1>
+<h1 class="font-bold text-xl grid justify-center my-4"><%= @creator.name %></h1>
+<div class="grid grid-cols-2">
+    <div class="mr-10">
 
     <h2> Biography: </h2>
     <p> <%= @creator.bio %> </p>
     </div>
 
-    <div>
+    <div class="grid justify-center place-items-center">
     <% if @creator.portrait.attached? %>
-    <%= image_tag @creator.portrait %>
+        <%= image_tag @creator.portrait, class: "max-h-96 max-w-2/4" %>
     <% end %> 
     </div>
 </div>
