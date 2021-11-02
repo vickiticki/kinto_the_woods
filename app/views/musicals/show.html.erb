@@ -1,12 +1,19 @@
-<h1 class="font-bold text-xl mb-8 mt-4"> <%= @musical.title %> </h1>
+<div class="flex">
+  <div class="info">
+    <h1 class="font-bold text-xl mb-8 mt-4"> <%= @musical.title %> </h1>
 
- <% if @musical.poster.attached? %>
-  <%= image_tag @musical.poster %>
-<% end %> 
+    <p> Year: <%= @musical.release_year %> </p>
+    <h3> Synopsis: </h3>
+    <p> <%= @musical.synopsis %> </p>
+  </div>
 
-<p> Year: <%= @musical.release_year %> </p>
-<h3> Synopsis: </h3>
-<p> <%= @musical.synopsis %> </p>
+  <div class="poster">
+    <% if @musical.poster.attached? %>
+      <%= image_tag @musical.poster %>
+    <% end %> 
+  </div>
+</div>
+
 <h3 class="mt-8">Creative Team: </h3>
 <ul class="mt-4 list-disc list-inside">
     <% @musical.books.each do |book| %>
