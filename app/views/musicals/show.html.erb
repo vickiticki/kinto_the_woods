@@ -29,7 +29,9 @@
 
     <div class="field">
       <%= form.label :creator %>
-      <%= form.select :creator_id, options_from_collection_for_select(Creator.all.sort_by {|hash| hash[:name]}, 'id', 'name') %>
+      <div class="text-black px-2">
+        <%= form.select :creator_id, options_from_collection_for_select(Creator.all.sort_by {|hash| hash[:name]}, 'id', 'name') %>
+      </div>
     </div> 
 
   <%= submit_tag("Add Person", :class=>"bg-green-600 p-1 font-semibold my-2") %>
@@ -80,7 +82,9 @@
   
   <div class="field">
     <%= form.label :list %>
-    <%= form.select :list_id, options_from_collection_for_select(List.select {|list| list.user_id == current_user.id}, 'id', 'list_title') %>
+    <div class="text-black px-2">
+      <%= form.select :list_id, options_from_collection_for_select(List.select {|list| list.user_id == current_user.id}, 'id', 'list_title') %>
+    </div>
   </div> 
 
   <%= submit_tag("Add to list", :class => "bg-green-600 p-1 font-semibold my-2") %>

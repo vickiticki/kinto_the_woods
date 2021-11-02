@@ -32,7 +32,9 @@
 
     <div class="field">
         <%= form.label :musical %>
-        <%= form.select :musical_id, options_from_collection_for_select(Musical.all.sort_by {|hash| hash[:title]}, 'id', 'title') %>
+        <div class="text-black px-2">
+            <%= form.select :musical_id, options_from_collection_for_select(Musical.all.sort_by {|hash| hash[:title]}, 'id', 'title') %>
+        </div>
     </div> 
 
     <%= submit_tag("Add Musical", :class => "bg-green-600 p-1 font-semibold my-2") %>
