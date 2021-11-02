@@ -1,4 +1,4 @@
-<h1 class="font-bold text-xl">Musicals</h1>
+<h1 class="font-bold text-xl mb-2">Musicals</h1>
 <ul>
     <% @musicals.each do |musical|%>
     <li> <%= link_to musical.title, musical_path(musical) %> </li>
