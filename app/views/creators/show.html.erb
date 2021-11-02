@@ -1,13 +1,17 @@
-<h1><%= @creator.name %></h1>
+<div class="grid grid-flow-col justify-around">
+    <div class="max-w-50 mr-10">
+    <h1><%= @creator.name %></h1>
 
+    <h2> Biography: </h2>
+    <p> <%= @creator.bio %> </p>
+    </div>
 
- <% if @creator.portrait.attached? %>
-  <%= image_tag @creator.portrait %>
-<% end %> 
-
-
-<h2> Biography: </h2>
-<p> <%= @creator.bio %> </p>
+    <div>
+    <% if @creator.portrait.attached? %>
+    <%= image_tag @creator.portrait %>
+    <% end %> 
+    </div>
+</div>
 
 <h2 class="mt-8"> Musicals: </h2>
 
