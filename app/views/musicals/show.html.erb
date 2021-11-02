@@ -1,13 +1,13 @@
 <h1 class="font-bold text-xl my-4 grid justify-center"> <%= @musical.title %> </h1>
-<div class="grid grid-flow-col justify-between">
+<div class="grid grid-cols-2 justify-between">
   <div class="info mr-10">
 
-    <p> Year: <%= @musical.release_year %> </p>
+    <p class="my-2"> Year: <%= @musical.release_year %> </p>
     <h3> Synopsis: </h3>
     <p> <%= @musical.synopsis %> </p>
   </div>
 
-  <div class="poster">
+  <div class="poster grid justify-center place-items-center">
     <% if @musical.poster.attached? %>
       <%= image_tag @musical.poster %>
     <% end %> 
