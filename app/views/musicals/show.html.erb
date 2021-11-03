@@ -5,14 +5,6 @@
     <p class="my-2"> Year: <%= @musical.release_year %> </p>
     <h3> Synopsis: </h3>
     <p> <%= @musical.synopsis %> </p>
-  </div>
-
-  <div class="poster grid justify-center place-items-center">
-    <% if @musical.poster.attached? %>
-      <%= image_tag @musical.poster %>
-    <% end %> 
-  </div>
-</div>
 
 <h3 class="mt-8">Creative Team: </h3>
 <ul class="list-disc list-inside">
@@ -23,6 +15,14 @@
     <% end %>
 </ul>
 
+  </div>
+
+  <div class="poster grid justify-center flex items-start">
+    <% if @musical.poster.attached? %>
+      <%= image_tag @musical.poster %>
+    <% end %> 
+  </div>
+</div>
 <%
 =begin%>
  <p> <%= link_to "Add Person to Team", '/books/new' %> </p> 
