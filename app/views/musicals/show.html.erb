@@ -15,11 +15,11 @@
 </div>
 
 <h3 class="mt-8">Creative Team: </h3>
-<ul class="mt-4 list-disc list-inside">
+<ul class="list-disc list-inside">
     <% @musical.books.each do |book| %>
     <% creator = book.creator %>
         <li> <%= link_to creator.name, creator_path(creator) %> </li>
-        <button class="p-0.5 border-red-700 border-2 rounded"><%= link_to 'Remove', book_path(book), method: :delete %></button>
+        <button class="p-0.5 border-red-700 bg-black border-2 rounded ml-4"><%= link_to 'Remove', book_path(book), method: :delete %></button>
     <% end %>
 </ul>
 
@@ -75,7 +75,7 @@
 <% if @items.length == 0 %>
   <p>No lists</p>
 <% else %>
-  <ul>
+  <ul class="list-disc list-inside">
     <% @items.each do |item| %>
         <li><%= link_to List.find(item.list_id).list_title, list_path(List.find(item.list_id)) %></li>
     <% end %> 
