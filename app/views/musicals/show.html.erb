@@ -10,7 +10,7 @@
 <ul class="list-disc list-inside">
     <% @musical.books.each do |book| %>
     <% creator = book.creator %>
-        <li> <%= link_to creator.name, creator_path(creator) %> </li>
+        <li class="mt-1"> <%= link_to creator.name, creator_path(creator) %> </li>
         <button class="p-0.5 border-red-700 bg-black border-2 rounded ml-4"><%= link_to 'Remove', book_path(book), method: :delete %></button>
     <% end %>
 </ul>
@@ -77,7 +77,7 @@
 <% else %>
   <ul class="list-disc list-inside">
     <% @items.each do |item| %>
-        <li><%= link_to List.find(item.list_id).list_title, list_path(List.find(item.list_id)) %></li>
+        <li class="mt-1"><%= link_to List.find(item.list_id).list_title, list_path(List.find(item.list_id)) %></li>
     <% end %> 
   </ul>
 <% end %>
