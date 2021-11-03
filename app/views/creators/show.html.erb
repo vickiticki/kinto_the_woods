@@ -6,7 +6,7 @@
     <p> <%= @creator.bio %> </p>
     </div>
 
-    <div class="grid justify-center place-items-center">
+    <div class="grid justify-center flex items-start">
     <% if @creator.portrait.attached? %>
         <%= image_tag @creator.portrait, class: "max-h-96 max-w-2/4" %>
     <% end %> 
