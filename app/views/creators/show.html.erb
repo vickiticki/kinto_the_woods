@@ -18,7 +18,7 @@
 <ul class="mt-2 list-disc list-inside">
     <% @books.each do |book| %>
         <li> <%= link_to book.musical.title, musical_path(book.musical) %> </li>
-        <button class="p-0.5 border-red-700 border-2 rounded"> <%= link_to 'Remove Musical', book_path(book), method: :delete %> </button>
+        <button class="p-0.5 border-red-700 bg-black border-2 rounded ml-4"> <%= link_to 'Remove Musical', book_path(book), method: :delete %> </button>
     <% end %>
 </ul>
 
