@@ -3,15 +3,17 @@ class MusicalsController < ApplicationController
     before_action :find_musical, only: [:show, :edit, :update, :destroy]
     def index 
         @musicals = Musical.all.sort_by {|hash| hash[:title]}
-    end
-
-    def show
-        # @musical = Musical.find(params[:id])
-      @creators = @musical.creators
-      @songs = @musical.songs
-      if @musical.album_id != nil && @musical.album_id.length == 22 
-        @album = RSpotify::Album.find(@musical.album_id)
       end
+      
+      def show
+        # @musical = Musical.find(params[:id])
+        @creators = @musical.creators
+        @songs = @musical.songs
+        if @musical.album_id == "search"
+          @album = RSpotify::Album.search(@musical.title).first
+        elsif @musical.album_id != nil && @musical.album_id.length == 22 
+          @album = RSpotify::Album.find(@musical.album_id)
+        end
       @items = @musical.items
     end
 
