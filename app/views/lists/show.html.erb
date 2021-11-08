@@ -1,4 +1,4 @@
-<h2><%= @list.list_title %></h2>
+<h2 class=" font-bold text-2xl mb-2"><%= @list.list_title %></h2>
 <p> by <%= link_to User.find(@list.user_id).name, user_path(User.find(@list.user_id)) %></p> 
 
 <ul class="list-disc list-inside">
