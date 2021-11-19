@@ -23,32 +23,20 @@
 <div class="field pb-4 flex">
     <%= form.label :synopsis %>
     <div class="text-black px-2">
-        <%= form.text_area :synopsis, class: "h-16 break-words" %>
+        <%= form.text_area :synopsis, class: "h-24 break-words w-96 lg:h-36" %>
     </div>
 </div>
-
 <%
 =begin%>
-  radio buttons? that allow people to select between entering id or searching by title
-  searching stores id as "search"
+ md:w-60 lg:w-96 
 <%
 =end%>
 
-<%
-=begin%>
- <div class="field pb-4 flex">
-    <%= form.label "spotify id" %>
-    <div class="text-black px-2">
-        <%= form.text_field :album_id %>
-    </div>
-</div> 
-<%
-=end%>
 <p class="mb-2">For tracklistings: (leave blank to enter manually)</p>
 <div class="field pb-4 px-1 ml-2">
-    <div class="flex">
+    <div class="flex content-center">
         <%= form.radio_button :album_id, "ID", checked: true %>
-        <%= form.label "Spotify ID:", class: "px-1 pb-2" %>
+        <%= form.label "Spotify ID:", class: "px-1 pb-2 flext content-center" %>
         <div class="text-black px-2">
             <%= form.text_field :album_id %>
         </div>
