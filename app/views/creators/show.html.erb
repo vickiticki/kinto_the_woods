@@ -46,7 +46,7 @@
 <% end %>
 </div>
 
-<p class="mt-8 text-green-200"> <%= link_to "Edit Person", edit_creator_path(@creator) %> </p>
+<p class="mt-8 text-green-200 bg-black font-bold p-2 max-w-min border-green-200 border-2"> <%= link_to "Edit", edit_creator_path(@creator) %> </p>
 
 <p class="my-4 bg-white text-red-700 font-bold p-2 max-w-min"> <%= link_to 'Delete', creator_path(@creator.id), method: :delete, data: { confirm: 'Are you sure?' } %> </p>
 
