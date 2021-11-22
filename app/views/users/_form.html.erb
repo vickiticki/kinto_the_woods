@@ -40,12 +40,14 @@
       </div>
     </div>
 
-    <%= submit_tag("Sign Up", :class => "bg-green-600 p-1 font-semibold") %>
-
     <%
 =begin%>
- <%= form.submit %> 
+ <%= submit_tag("Sign Up", :class => "bg-green-600 p-1 font-semibold") %> 
 <%
 =end%>
+
+ 
+ <div class="text-black p-1"><%= form.submit %> </div>
+
   </div>
 <% end %>
