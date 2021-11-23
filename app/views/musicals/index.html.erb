@@ -1,7 +1,7 @@
-<h1 class="font-bold text-xl mb-2">Musicals</h1>
+<h1 class="font-bold text-2xl mb-2">Musicals</h1>
 <ul>
     <% @musicals.each do |musical|%>
-    <li class="pt-1"> <%= link_to musical.title, musical_path(musical) %> </li>
+    <li class="pt-1"> <%= link_to musical.title, musical_path(musical) %> (<%= musical.release_year %>) </li>
 
     <% end %>
 </ul>

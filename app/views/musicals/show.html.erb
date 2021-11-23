@@ -77,7 +77,9 @@
 <% else %>
   <ul class="list-disc list-inside">
     <% @items.each do |item| %>
+        <% if item.list_id %>
         <li class="mt-1"><%= link_to List.find(item.list_id).list_title, list_path(List.find(item.list_id)) %></li>
+      <% end %>    
     <% end %> 
   </ul>
 <% end %>
